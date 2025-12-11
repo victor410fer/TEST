@@ -5,6 +5,6 @@ app = Flask(__name__)
 def home():
     return '<h1 style="color: blue;">Flask is running!</h1><p>If you see this, the app works.</p>'
 
-# Vercel requires this
-if __name__ == "app":
+# Fixed the local-run guard so running `python app.py` works locally.
+if __name__ == "__main__":
     app.run(debug=True)
